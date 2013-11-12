@@ -22,7 +22,6 @@ NSString *const JDStatusBarStyleDark    = @"JDStatusBarStyleDark";
 @property (nonatomic, strong, readonly) UIActivityIndicatorView *activityView;
 @property (nonatomic, strong, readonly) UIWindow *overlayWindow;
 @property (nonatomic, strong, readonly) UIView *progressView;
-@property (nonatomic, strong, readonly) UILabel *textLabel;
 @property (nonatomic, strong, readonly) UIView *topBar;
 
 @property (nonatomic, strong) NSTimer *dismissTimer;
