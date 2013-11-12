@@ -23,6 +23,7 @@ NSString *const JDStatusBarStyleDark    = @"JDStatusBarStyleDark";
 @property (nonatomic, strong, readonly) UIWindow *overlayWindow;
 @property (nonatomic, strong, readonly) UIView *progressView;
 @property (nonatomic, strong, readonly) UIView *topBar;
+@property (nonatomic, strong, readonly) UILabel *textLabel;
 
 @property (nonatomic, strong) NSTimer *dismissTimer;
 @property (nonatomic, assign) CGFloat progress;
@@ -265,7 +266,7 @@ NSString *const JDStatusBarStyleDark    = @"JDStatusBarStyleDark";
     self.progressView.backgroundColor = style.progressBarColor;
     self.textLabel.textColor = style.textColor;
     self.textLabel.font = style.font;
-    self.textLabel.text = status;
+    [JDStatusBarNotification setText:status];
     self.textLabel.frame = CGRectMake(0, 1+style.textVerticalPositionAdjustment,
                                       self.topBar.bounds.size.width, self.topBar.bounds.size.height-1);
     
@@ -466,6 +467,11 @@ NSString *const JDStatusBarStyleDark    = @"JDStatusBarStyleDark";
         [self.activityView stopAnimating];
         [self.activityView removeFromSuperview];
     }
+}
+#pragma mark set text
+
++ (void) setText:(NSString *)text{
+    [self sharedInstance].textLabel.text = text;
 }
 
 #pragma mark State

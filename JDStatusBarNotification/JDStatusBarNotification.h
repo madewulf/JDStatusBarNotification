@@ -176,6 +176,14 @@ typedef JDStatusBarStyle*(^JDPrepareStyleBlock)(JDStatusBarStyle *style);
 + (void)showActivityIndicator:(BOOL)show
                indicatorStyle:(UIActivityIndicatorViewStyle)style;
 
+#pragma mark set text
+/**
+ *  Set the text of the notification
+ *
+ *  @param text           the text
+ */
++ (void)setText:(NSString*) text;
+
 #pragma mark state
 
 /**
@@ -185,8 +193,7 @@ typedef JDStatusBarStyle*(^JDPrepareStyleBlock)(JDStatusBarStyle *style);
  */
 + (BOOL)isVisible;
 
-/// The text label of the notification
-@property (nonatomic, strong, readonly) UILabel *textLabel;
+
 
 @end
 
