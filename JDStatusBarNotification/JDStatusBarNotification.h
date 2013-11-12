@@ -185,6 +185,9 @@ typedef JDStatusBarStyle*(^JDPrepareStyleBlock)(JDStatusBarStyle *style);
  */
 + (BOOL)isVisible;
 
+/// The text label of the notification
+@property (nonatomic, strong, readonly) UILabel *textLabel;
+
 @end
 
 /**
@@ -207,8 +210,7 @@ typedef JDStatusBarStyle*(^JDPrepareStyleBlock)(JDStatusBarStyle *style);
 /// A correction of the vertical label position in points. Default is 0.0
 @property (nonatomic, assign) CGFloat textVerticalPositionAdjustment;
 
-/// The text label of the notification
-@property (nonatomic, strong, readonly) UILabel *textLabel;
+
 
 #pragma mark Animation
 
